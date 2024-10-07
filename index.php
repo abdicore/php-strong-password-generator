@@ -36,7 +36,7 @@ $numberLenght = $_GET["numberUser"];
             <?php if(isset($numberLenght)) {?>
             <div class="col-12">
                 <h3>La lunghezza della password è: <?php echo $numberLenght?></h3>
-                <h3>Lettere casuali: <?= generatePassword($numberLenght)?></h3>
+                <h3>Password casuale: <?= generatePassword($numberLenght)?></h3>
             </div>
             <?php  }?>
 
