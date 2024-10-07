@@ -20,15 +20,12 @@ $numberLenght = $_GET["numberUser"]
      <main class="container">
         <section class="row">
             <div class="col-12">
-                <h1></h1>
+                <h1 class="mt-3">Password generetor</h1>
                 <form action="index.php" method="GET">
-                    <div class="mb-3">
+                    <div class="mt-3 mb-3">
                          <label for="nome" class="form-label">Scegli la lunghezza dell password</label>
                          <input type="number" class="form-control" id="numberUser" name="numberUser" >
-                          
                     </div>              
-                   
-                    
                     <button type="submit" class="btn btn-primary">Send</button>
                     <button type="reset" class="btn btn-warning">Reset</button>
                 </form>
