@@ -3,7 +3,23 @@ Una nostra funzione utilizzerà questo dato per generare una password casuale (c
 Scriviamo tutto (logica e layout) in un unico file index.php -->
 
 <?php 
-$numberLenght = $_GET["numberUser"]
+if(isset($_GET["numberUser"])){
+$numberLenght = $_GET["numberUser"];
+}
+    
+function getRandomLetter($letters){
+    $letters = 'abcdefghilmnopqrstvz';
+    for($i = 0; $i <strlen($letters); $i++){
+        echo $letters[rand(0,strlen($letters)-1)];
+
+    }
+}
+
+ 
+ function getRundomNumber($min,$max){
+     return rand(1,5);
+
+ }
 
 ?>
 <!DOCTYPE html>
@@ -29,6 +45,13 @@ $numberLenght = $_GET["numberUser"]
                     <button type="submit" class="btn btn-primary">Send</button>
                     <button type="reset" class="btn btn-warning">Reset</button>
                 </form>
+            <?php if(isset($numberLenght)) {?>
+            <div class="col-12">
+                <h3>La lunghezza della password è: <?php echo $numberLenght?></h3>
+            </div>
+            <?php  }?>
+
+
 
                
             </div>
