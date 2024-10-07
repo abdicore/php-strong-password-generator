@@ -6,23 +6,10 @@ Scriviamo tutto (logica e layout) in un unico file index.php -->
 if(isset($_GET["numberUser"])){
 $numberLenght = $_GET["numberUser"];
 }
-    
-function generatePassword($passwordLength){
-    $letters = 'abcdefghilmnopqrstvz';
-    $password = '';
-    for($i = 0; $i < $passwordLength; $i++){
-        $selectedCharacter = $letters[rand(0,strlen($letters)-1)];
-        $password .= $selectedCharacter;
-    }
-    return $password;
-}
- 
- function getRundomNumber($min,$max){
-     return rand(1,5);
 
- }
 
 ?>
+<?php require_once __DIR__ . "/functions/function.php";?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -49,6 +36,7 @@ function generatePassword($passwordLength){
             <?php if(isset($numberLenght)) {?>
             <div class="col-12">
                 <h3>La lunghezza della password è: <?php echo $numberLenght?></h3>
+                <h3>Lettere casuali: <?= generatePassword($numberLenght)?></h3>
             </div>
             <?php  }?>
 
