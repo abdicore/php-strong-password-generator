@@ -7,14 +7,15 @@ if(isset($_GET["numberUser"])){
 $numberLenght = $_GET["numberUser"];
 }
     
-function getRandomLetter($letters){
+function generatePassword($passwordLength){
     $letters = 'abcdefghilmnopqrstvz';
-    for($i = 0; $i <strlen($letters); $i++){
-        echo $letters[rand(0,strlen($letters)-1)];
-
+    $password = '';
+    for($i = 0; $i < $passwordLength; $i++){
+        $selectedCharacter = $letters[rand(0,strlen($letters)-1)];
+        $password .= $selectedCharacter;
     }
+    return $password;
 }
-
  
  function getRundomNumber($min,$max){
      return rand(1,5);
